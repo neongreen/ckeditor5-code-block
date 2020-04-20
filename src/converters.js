@@ -242,6 +242,7 @@ function extractDataFromCodeElement( stringifiedElement ) {
 	const data = new RegExp( /^<code[^>]*>([\S\s]*)<\/code>$/ ).exec( stringifiedElement )[ 1 ];
 
 	return data
+	    .replace( /&amp;/g, '&' )
 		.replace( /&lt;/g, '<' )
 		.replace( /&gt;/g, '>' );
 }
